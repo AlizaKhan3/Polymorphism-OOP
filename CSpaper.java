@@ -2,9 +2,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 class GeometricObjects {
-    String color = "White";
-    boolean filled;
-    Date dateCreated = new Date();
+    private String color = "White";
+    private boolean filled;
+    private Date dateCreated = new Date();
 
     GeometricObjects() {
         // Default constructor
@@ -39,8 +39,8 @@ class GeometricObjects {
 
 // PART B CODE
 class Rectangle extends GeometricObjects {
-    double width = 2.0;
-    double height = 1.0;
+    private double width = 2.0;
+    private double height = 1.0;
 
     Rectangle() {
         // No-argument constructor
@@ -54,6 +54,7 @@ class Rectangle extends GeometricObjects {
 
     // Constructor with all 4 params
     Rectangle(double width, double height, String color, boolean filled) {
+        // super(color, filled);
         this.height = height;
         this.width = width;
         setColor(color);
@@ -82,7 +83,7 @@ class Rectangle extends GeometricObjects {
 
     // toString method
     public String toString() {
-        return("Rectangle: width = " + width + " height = " + height);
+        return ("Rectangle: width = " + width + " height = " + height);
     }
 }
 
@@ -90,20 +91,17 @@ class Rectangle extends GeometricObjects {
 public class test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //user prompt
+        // user prompt
         System.out.println("enter width, height, color, boolean");
         double width = sc.nextDouble();
         double height = sc.nextDouble();
         String color = sc.next();
         boolean filled = sc.nextBoolean();
-        
-//      System.out.println("enter width, height, color, boolean");
-        Rectangle obj = new Rectangle(width,height, color, filled);
-        
+        Rectangle obj = new Rectangle(width, height, color, filled);
         System.out.println(obj.getArea());
         System.out.println(obj.getPerimeter());
         System.out.println(obj.getColor());
         System.out.println(obj.isfilled());
-        // System.out.println("Area= "+ obj.getArea() + " Perimeter= " + obj.getPerimeter() + "Color= " + obj.getColor() + "Boolean value= " + obj.isfilled());
+        System.out.println(new Date());
     }
 }
